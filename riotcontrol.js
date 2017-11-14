@@ -6,6 +6,13 @@ var RiotControl = {
   },
   reset: function() {
     this._stores = [];
+  },
+  getStore: function(name){
+    var stores = [];
+    this._stores.forEach(function (store) {
+      if( store.constructor.name == name ) stores.push(store);
+    });
+    return stores.length == 1 ? stores[0]: stores;
   }
 };
 
